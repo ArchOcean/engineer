@@ -1,4 +1,4 @@
-function drawArrow(ctx, fromx, fromy, tox, toy, arrowWidth, color) {
+function drawArrow(ctx, fromx, fromy, tox, toy, arrowWidth, color, text = "F") {
   //variables to be used when creating the arrow
   var headlen = 10;
   var angle = Math.atan2(toy - fromy, tox - fromx);
@@ -36,6 +36,8 @@ function drawArrow(ctx, fromx, fromy, tox, toy, arrowWidth, color) {
     tox - headlen * Math.cos(angle - Math.PI / 7),
     toy - headlen * Math.sin(angle - Math.PI / 7)
   );
+  ctx.font = "20px Arial";
+  ctx.fillText(text, (tox + fromx) / 2 + 5, (toy + fromy) / 2 - 5);
 
   //draws the paths created above
   ctx.stroke();

@@ -4,8 +4,10 @@ class Object {
       x: x,
       y: y,
     };
-    this.width = width;
-    this.height = height;
+    this.dimension = {
+      width: width,
+      height: height,
+    };
     this.acceleration = {
       x: 0,
       y: 0.0981,
@@ -27,21 +29,13 @@ class Object {
 
     ctx.beginPath();
     ctx.rect(
-      this.position.x - this.width,
-      this.position.y - this.height,
-      this.width,
-      this.height
+      this.position.x - this.dimension.width,
+      this.position.y - this.dimension.height,
+      this.dimension.width,
+      this.dimension.height
     );
     ctx.fill();
-    drawArrow(
-      ctx,
-      this.position.x - this.width / 2,
-      this.position.y - this.height / 2,
-      this.position.x - this.width / 2 + 100 * Math.cos(Math.PI / 2),
-      this.position.y - this.height / 2 + 100 * Math.sin(Math.PI / 2),
-      3,
-      "gray"
-    );
+
     ctx.restore();
   }
 }
