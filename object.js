@@ -10,11 +10,11 @@ class Object {
     };
     this.acceleration = {
       x: 0,
-      y: 0.0981,
+      y: 0,
     };
     this.velocity = {
       x: 0,
-      y: 3,
+      y: 0,
     };
     this.origin = {
       x: 0,

@@ -60,3 +60,15 @@ function drawArrow(
   ctx.stroke();
   ctx.restore();
 }
+
+function toSub(value) {
+  var str = "";
+  var mag = Math.max(0, Math.floor(Math.log10(value)));
+
+  while (mag >= 0) {
+    var digit = Math.floor(value / Math.pow(10, mag)) % 10;
+    str += String.fromCharCode(8320 + digit);
+    mag--;
+  }
+  return str;
+}

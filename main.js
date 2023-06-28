@@ -46,7 +46,8 @@ function animate() {
       box.origin.y + 200 * Math.sin(angle),
       4,
       "gray",
-      angle
+      angle,
+      "F" + toSub(1)
     );
   }
 
