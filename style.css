@@ -11,6 +11,7 @@ body {
 }
 canvas {
   background-color: aliceblue;
+  object-fit: contain;
 }
 
 .form {

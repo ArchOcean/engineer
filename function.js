@@ -1,4 +1,14 @@
-function drawArrow(ctx, fromx, fromy, tox, toy, arrowWidth, color, text = "F") {
+function drawArrow(
+  ctx,
+  fromx,
+  fromy,
+  tox,
+  toy,
+  arrowWidth,
+  color,
+  tilt,
+  text = "F"
+) {
   //variables to be used when creating the arrow
   var headlen = 10;
   var angle = Math.atan2(toy - fromy, tox - fromx);
@@ -31,13 +41,20 @@ function drawArrow(ctx, fromx, fromy, tox, toy, arrowWidth, color, text = "F") {
 
   //path from the side point back to the tip of the arrow, and then
   //again to the opposite side point
+  ctx.lineWidth = 4;
   ctx.lineTo(tox, toy);
   ctx.lineTo(
     tox - headlen * Math.cos(angle - Math.PI / 7),
     toy - headlen * Math.sin(angle - Math.PI / 7)
   );
   ctx.font = "20px Arial";
-  ctx.fillText(text, (tox + fromx) / 2 + 5, (toy + fromy) / 2 - 5);
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(
+    text,
+    fromx + 120 * Math.cos(tilt - Math.PI / 25),
+    fromy + 120 * Math.sin(tilt - Math.PI / 25)
+  );
 
   //draws the paths created above
   ctx.stroke();
