@@ -47,13 +47,13 @@ function drawArrow(
     tox - headlen * Math.cos(angle - Math.PI / 7),
     toy - headlen * Math.sin(angle - Math.PI / 7)
   );
-  ctx.font = "20px Arial";
+  ctx.font = "20px serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   ctx.fillText(
     text,
-    fromx + 120 * Math.cos(tilt - Math.PI / 25),
-    fromy + 120 * Math.sin(tilt - Math.PI / 25)
+    fromx + 120 * Math.cos(degreeToRadian(tilt) - Math.PI / 25),
+    fromy + 120 * Math.sin(degreeToRadian(tilt) - Math.PI / 25)
   );
 
   //draws the paths created above
@@ -71,4 +71,8 @@ function toSub(value) {
     mag--;
   }
   return str;
+}
+
+function degreeToRadian(degree) {
+  return -Math.PI * (parseInt(degree, 10) / 180);
 }
