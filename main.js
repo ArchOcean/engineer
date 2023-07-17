@@ -10,7 +10,7 @@ const originalWidth = canvas.width;
 const ctx = canvas.getContext("2d");
 const box = new Object(300, 400, 100, 100);
 
-let arrow = [0, 30, 45, 60, 90, 135, 180, 225, 270, 315];
+let arrow = [];
 
 btn.addEventListener("click", (event) => {
   event.preventDefault();
